@@ -10,6 +10,7 @@
     "apollo-boost": "^0.1.10",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "prop-types": "^15.7.2",
     "react": "^16.4.1",
     "react-apollo": "^2.1.6",
     "react-dom": "^16.4.1",
@@ -29,7 +30,21 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-`pr`ettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.16.0",
     "node-sass": "^4.9.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "prettier": "^1.18.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier",
+      "react-app",
+      "plugin:react/recommended"
+    ]
   }
 }
