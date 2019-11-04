@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
-import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ApolloProvider } from 'react-apollo';
+// import { ApolloProvider } from '@apollo/react-hooks';
 import HomeView from './views/HomeView';
 import client from './ApolloClient';
 import store from './store';
