@@ -17,7 +17,6 @@ class ApartmentView extends React.Component {
 
   render() {
     const { apartment, isLoading } = this.props;
-    console.log(apartment);
     if (isLoading) {
       return <div>Loading...</div>;
     }
@@ -76,6 +75,8 @@ class ApartmentView extends React.Component {
 ApartmentView.propTypes = {
   match: PropTypes.object,
   apartment: PropTypes.object,
+  fetchApartment: PropTypes.func,
+  isLoading: PropTypes.bool
 };
 const mapStateToProps = state => ({
   apartment: state.apartmentItem.apartment,

@@ -15,11 +15,11 @@ const fetchApartment = _id => dispatch => {
         owner {
         _id
           email
-          #profile {
+          # profile {
           #  firstName
           #  lastName
           #  role
-          #}
+          # }
         } 
         title
         location {
