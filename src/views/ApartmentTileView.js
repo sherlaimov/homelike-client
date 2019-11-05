@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ApartmentAmenityView from './ApartmentAmentityView';
 import constants from '../constants';
 
@@ -53,4 +54,7 @@ const ApartmentTileView = ({ apartment }) => {
   );
 };
 
+ApartmentTileView.propTypes = {
+  apartment: PropTypes.object,
+};
 export default ApartmentTileView;

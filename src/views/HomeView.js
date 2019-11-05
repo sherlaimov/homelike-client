@@ -1,47 +1,48 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
 import ApartmentTileView from './ApartmentTileView';
-import fetchApartmentsList from '../actions/apartmentsListActions';
 
-class HomeView extends React.Component {
-  componentDidMount() {
-    this.props.fetchApartmentsList();
-  }
-
-  render() {
-    const { apartmentsList, isLoading } = this.props;
-    const { items: apartments } = apartmentsList;
-
-    if (isLoading) {
-      return <div>Loading...</div>;
+const APARTMENT_LIST = gql`
+  {
+    apartments(active: true) {
+      items {
+        _id
+        owner {
+          _id
+          email
+        }
+        title
+        location {
+          title
+        }
+        size
+        price
+        amenities
+        images
+      }
     }
+  }
+`;
 
-    return (
-      <div className="container-list container-lg clearfix">
-        <div className="col-12 float-left">
-          <div className="view-apartment-list">
-            {apartments.length > 0 &&
-              apartments.map((item, index) => <ApartmentTileView key={index} apartment={item} />)}
-          </div>
+const HomeView = () => {
+  const { loading, error, data } = useQuery(APARTMENT_LIST);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  const { items: apartments } = data.apartments;
+
+  return (
+    <div className="container-list container-lg clearfix">
+      <div className="col-12 float-left">
+        <div className="view-apartment-list">
+          {apartments.length > 0 &&
+            apartments.map((item, index) => <ApartmentTileView key={index} apartment={item} />)}
         </div>
       </div>
-    );
-  }
-}
-
-HomeView.propTypes = {
-  fetchApartmentsList: PropTypes.func,
-  apartmentsList: PropTypes.object,
-  isLoading: PropTypes.bool
+    </div>
+  );
 };
 
-const mapStateToProps = state => ({
-  apartmentsList: state.apartmentsList.apartments,
-  isLoading: state.apartmentsList.isLoading
-});
-
-export default connect(
-  mapStateToProps,
-  { fetchApartmentsList }
-)(HomeView);
+export default HomeView;
