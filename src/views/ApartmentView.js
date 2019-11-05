@@ -120,6 +120,8 @@ const ApartmentView = props => {
 ApartmentView.propTypes = {
   match: PropTypes.object,
   apartment: PropTypes.object,
+  fetchApartment: PropTypes.func,
+  isLoading: PropTypes.bool
 };
 
 export default ApartmentView;
