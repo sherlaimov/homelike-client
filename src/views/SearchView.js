@@ -16,10 +16,10 @@ const initialState = {
     size: { options: ['all'], value: 'all' },
     price: { options: ['all'], value: 'all' },
     amenities: { options: ['all'], value: 'all' },
-    services: { options: ['all'], value: 'all' },
+    services: { options: ['all'], value: 'all' }
   },
   data: [],
-  cache: [],
+  cache: []
 };
 
 const Search = () => {
@@ -49,7 +49,7 @@ const Search = () => {
       size: [],
       price: [],
       amenities: [],
-      services: [],
+      services: []
     };
     const allFilters = _data.reduce((acc, b) => {
       acc.bathrooms.push(b.bathrooms);
@@ -139,14 +139,17 @@ const Search = () => {
                 onChange={handleFilterChange}
                 options={val.options.map(o => ({
                   value: o.toString(),
-                  label: capitalize(o),
+                  label: capitalize(o)
                 }))}
               />
             </li>
           ))}
       </ul>
       <div className="col-12 float-left">
-        <p>Total apartments {data.length}</p>
+        <p>
+          Total apartments
+          {data.length}
+        </p>
         <div className="view-apartment-list">
           {data.length > 0 &&
             data.map((item, index) => <ApartmentTileView key={index} apartment={item} />)}

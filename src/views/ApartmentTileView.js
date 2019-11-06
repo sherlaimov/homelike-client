@@ -18,10 +18,10 @@ const ApartmentTileView = ({ apartment }) => {
                 style={{
                   backgroundImage: `url(${image})`,
                   backgroundPosition: 'center',
-                  backgroundSize: 'cover',
+                  backgroundSize: 'cover'
                 }}
-              ></div>
-              <div className="_3Ts2_4uirKsrlm2Qb57Avw"></div>
+              />
+              <div className="_3Ts2_4uirKsrlm2Qb57Avw" />
               <div className="Ok22VaqPDW9x1uaR46cRO _3ORDzmMDnpzTXIIXjJsRw7">
                 <span>{apartment.price} €</span>
                 <span className="_17Hci6D5EewOTY42eIXhPy">
@@ -55,6 +55,6 @@ const ApartmentTileView = ({ apartment }) => {
 };
 
 ApartmentTileView.propTypes = {
-  apartment: PropTypes.object,
+  apartment: PropTypes.object
 };
 export default ApartmentTileView;

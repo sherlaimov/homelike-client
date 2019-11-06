@@ -41,12 +41,12 @@ const APARTMENT = gql`
 
 const ApartmentView = props => {
   const {
-    match: { params },
+    match: { params }
   } = props;
   const { apartmentId } = params;
 
   const { loading, error, data } = useQuery(APARTMENT, {
-    variables: { id: apartmentId },
+    variables: { id: apartmentId }
   });
 
   if (loading) {
@@ -56,8 +56,8 @@ const ApartmentView = props => {
   const {
     owner: {
       email,
-      profile: { firstName, lastName, role },
-    },
+      profile: { firstName, lastName, role }
+    }
   } = apartment;
 
   const image = `${constants.baseUrl}images/apartments/${apartment.images[0]}`;
@@ -74,10 +74,10 @@ const ApartmentView = props => {
                     style={{
                       backgroundImage: `url(${image})`,
                       backgroundPosition: 'center',
-                      backgroundSize: 'contain',
+                      backgroundSize: 'contain'
                     }}
-                  ></div>
-                  <div className="_3Ts2_4uirKsrlm2Qb57Avw"></div>
+                  />
+                  <div className="_3Ts2_4uirKsrlm2Qb57Avw" />
                   <div className="Ok22VaqPDW9x1uaR46cRO _3ORDzmMDnpzTXIIXjJsRw7">
                     <span>{apartment.price} €</span>
                     <span className="_17Hci6D5EewOTY42eIXhPy">
@@ -103,7 +103,9 @@ const ApartmentView = props => {
                     </div>
                     <div className="owner-info">
                       <h4>Owner&apos;s Info</h4>
-                      <p>{firstName} {lastName}</p>
+                      <p>
+                        {firstName} {lastName}
+                      </p>
                       <p>{role}</p>
                       <p>{email}</p>
                     </div>
