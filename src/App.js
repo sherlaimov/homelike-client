@@ -6,18 +6,16 @@ import client from './apollo/ApolloClient';
 import ApartmentView from './views/ApartmentView';
 import SearchView from './views/SearchView';
 
-const App = () => {
-  return (
-    <ApolloProvider client={client}>
-      <Router>
-        <Fragment>
-          <Route exact path="/" component={HomeView} />
-          <Route exact path="/search" component={SearchView} />
-          <Route exact path="/apartments/:apartmentId" component={ApartmentView} />
-        </Fragment>
-      </Router>
-    </ApolloProvider>
-  );
-};
+const App = () => (
+  <ApolloProvider client={client}>
+    <Router>
+      <Fragment>
+        <Route exact path="/" component={HomeView} />
+        <Route exact path="/search" component={SearchView} />
+        <Route exact path="/apartments/:apartmentId" component={ApartmentView} />
+      </Fragment>
+    </Router>
+  </ApolloProvider>
+);
 
 export default App;
