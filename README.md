@@ -1,5 +1,3 @@
-- Original Assignment Code
-
 ## Client
 
 1. Turned many React class components into simple functions because they are not dependent on their internal state. Introduced the modern React hooks.
@@ -26,7 +24,7 @@ This allowed pulling the profile data associated with the owner data.
 
 This one was a big conundrum. I spent hours playing with GraphiQL to learn how to create search queries as well as to find out why it was impossible to pull the **locations** data. However, since the assignment clearly states that one doesn't need to change anything on the server to solve the task, I decided to pull the data straight from the `/apartments` and `/locations` endpoints. Please, take a look at the SearchView.js file. It's got a lot of unpleasant code because I had to normalize/merge the data to create the searching and filtering functionality required. Take notice that the filters as well as the search work together as a single filter pipe.
 
-6. I added Webpack on top of this CRA project. However, so far I haven't implemented the full functionality provided by the CRA cli. Would have to invest more time, exploring Webpack's documentation. Use `npm run web:start` to start Webpack.
+6. I added Webpack on top of this CRA project. However, so far I haven't implemented the full functionality provided by the CRA cli. Would have to invest more time, exploring Webpack's documentation. Use `npm run web:start` to start Webpack. Please, do not use this setting to check the implemented functionality.
 
 
 # Homelike client for assignment
