@@ -19,7 +19,7 @@
     "react-dom": "^16.4.1",
     "react-octicon": "^3.0.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "5.0.1",
     "react-select": "^3.0.8"
   },
   "scripts": {
@@ -47,14 +47,14 @@
     "eslint-loader": "^3.0.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.16.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.1",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.5",
     "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.15",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.9.0"
   },
   "eslintConfig": {
